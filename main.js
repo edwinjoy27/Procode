@@ -8,7 +8,7 @@ app.set('view engine', 'ejs')
 
 //home
 app.get("/",(req,res) => {
-	res.render('home')
+	res.render('algorithm')
 } )
 
 app.listen(PORT, () => {

@@ -86,7 +86,7 @@ async function swap_bubble(j,i,array_length){
 
 			 setTimeout(() =>{
 			 	res()
-			 },5000)
+			 },1000)
 
 	} )
 }
@@ -144,7 +144,7 @@ async function selection_sort_condition(min,i){
 
 		setTimeout(() =>{
 			res()
-		},4000)
+		},1000)
 
 	})
 }
@@ -162,14 +162,11 @@ async function selection_sort(array_length){
  		for(let j = i+1; j < array_length; j++){
 
  			
+
  			if(values_to_be_sorted[j] < values_to_be_sorted[min])
+
  				min = j
  		}
-
-
-
-
- 		await selection_sort_condition(min,i)
 
  		//for displaying the bars
  			display_bar_section.innerHTML = " "
@@ -195,9 +192,34 @@ async function selection_sort(array_length){
 				display_bar_section.appendChild(display_bar)
 
  			})
+ 			
+
+
+
+
+ 		await selection_sort_condition(min,i)
+
+
 
  		console.log("after sorting : ",values_to_be_sorted)		
  	} 	
+
+
+ 	display_bar_section.innerHTML = " "
+ 	values_to_be_sorted.forEach(elm => {
+
+
+		var display_bar = document.createElement('div')
+		display_bar.setAttribute('class', 'display_bar')
+
+		var values = elm
+		display_bar.innerHTML = values
+		display_bar.style.height = values + 'px'
+
+		display_bar.style.backgroundColor = "rgb(23,65,111)"
+		display_bar_section.appendChild(display_bar)
+
+ 	})
 
 }
 
@@ -212,6 +234,8 @@ btn[1].addEventListener('click', () => {
 		bubble_sort(array_length)
 	else if (sorting === "selection" )
 		selection_sort(array_length)
+	else if(sorting === "quick")
+		selction
 
 })
 

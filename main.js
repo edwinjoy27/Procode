@@ -10,7 +10,7 @@ app.set('view engine', 'ejs')
 //home
 app.get("/",(req,res) => {
 
-	res.send("home")
+	res.render("home")
 })
 
 //algorithm page

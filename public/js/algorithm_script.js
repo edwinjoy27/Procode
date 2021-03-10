@@ -37,11 +37,17 @@ btn[0].addEventListener('click', () => {
 
 })
 
+function swap(j,i){
+	let temp = values_to_be_sorted[j]
+	values_to_be_sorted[j] = values_to_be_sorted[i]
+	values_to_be_sorted[i] = temp
+}
+
 //function to sort the array using bubble sort	
 async function swap_bubble(j,i,array_length){
 	return new Promise(res => {
 
-		display_bar_section.innerHTML = " "
+						display_bar_section.innerHTML = " "
 						values_to_be_sorted.forEach(elm => {
 
 						var display_bar = document.createElement('div')
@@ -71,9 +77,9 @@ async function swap_bubble(j,i,array_length){
 					
 				if(values_to_be_sorted[j] > values_to_be_sorted[j+1]){
 
-					let temp = values_to_be_sorted[j]
-					values_to_be_sorted[j] = values_to_be_sorted[j+1]
-					values_to_be_sorted[j+1] = temp
+
+						swap(j,j+1)
+							
 					//displaying the sorted array
 	
 			 }
@@ -86,11 +92,10 @@ async function swap_bubble(j,i,array_length){
 }
 
 //bubble sorting algorithm	
-async function bubble_sort(){
+async function bubble_sort(array_length){
 
 	var bar_elements = document.getElementsByClassName('display_bar')
 	console.log("before sorting ",values_to_be_sorted)
-	let array_length = values_to_be_sorted.length
 
 	for(let i = 0; i < array_length ; i++){
 
@@ -124,21 +129,89 @@ async function bubble_sort(){
 			display_bar_section.appendChild(display_bar)
 
 
+
+
 	})
 
 
 
 }
 
+//swapping condition
+async function selection_sort_condition(min,i){
+	return new Promise(res => {
+		swap(min, i)
+
+		setTimeout(() =>{
+			res()
+		},4000)
+
+	})
+}
+
+//function to perform selection sort
+
+async function selection_sort(array_length){
+
+ 	console.log("before sorting : ",values_to_be_sorted)	
+
+ 	for(let i = 0; i < array_length; i++){
+
+ 		let min = i
+
+ 		for(let j = i+1; j < array_length; j++){
+
+ 			
+ 			if(values_to_be_sorted[j] < values_to_be_sorted[min])
+ 				min = j
+ 		}
 
 
-btn[1].addEventListener('click',async () => {
 
+
+ 		await selection_sort_condition(min,i)
+
+ 		//for displaying the bars
+ 			display_bar_section.innerHTML = " "
+ 			values_to_be_sorted.forEach(elm => {
+
+				var display_bar = document.createElement('div')
+				display_bar.setAttribute('class', 'display_bar')
+
+				var values = elm
+				display_bar.innerHTML = values
+				display_bar.style.height = values + 'px'
+
+				if(elm === values_to_be_sorted[min])
+				display_bar.style.backgroundColor = "rgb(23,167,111)"
+
+				else if(elm === values_to_be_sorted[i])
+					display_bar.style.backgroundColor = "rgb(50,123,111)"
+
+				else
+					display_bar.style.backgroundColor = "rgb(23,65,111)"
+
+				//appending the it to the display bar
+				display_bar_section.appendChild(display_bar)
+
+ 			})
+
+ 		console.log("after sorting : ",values_to_be_sorted)		
+ 	} 	
+
+}
+
+
+
+btn[1].addEventListener('click', () => {
+
+	let array_length = values_to_be_sorted.length
 	var sorting = select_option.value
 
 	if(sorting === "bubble")
-		await bubble_sort()
-
+		bubble_sort(array_length)
+	else if (sorting === "selection" )
+		selection_sort(array_length)
 
 })
 

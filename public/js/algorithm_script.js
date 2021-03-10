@@ -15,6 +15,30 @@ const btn = document.getElementsByClassName('button')
 var values_to_be_sorted = []
 
 
+function final_sorted(){
+
+	
+ 	display_bar_section.innerHTML = " "
+ 	values_to_be_sorted.forEach(elm => {
+
+
+		var display_bar = document.createElement('div')
+		display_bar.setAttribute('class', 'display_bar')
+
+		var values = elm
+		display_bar.innerHTML = values
+		display_bar.style.height = values + 'px'
+
+		display_bar.style.backgroundColor = "rgb(23,65,111)"
+		display_bar_section.appendChild(display_bar)
+
+ 	})
+
+}
+
+
+
+
 //adding bars to the display section
 btn[0].addEventListener('click', () => {
 
@@ -22,23 +46,23 @@ btn[0].addEventListener('click', () => {
 	display_bar.setAttribute('class', 'display_bar')
 
 	var values = input_field.value
-	display_bar.innerHTML = values
 
-	display_bar.style.height = values + 'px'
-	display_bar.style.backgroundColor = "rgb(23,65,111)"
+	if(values != "" && parseInt(values) > 0){
+		values_to_be_sorted.push(parseInt(values))
+		display_bar.innerHTML = values
 
-	//appending the it to the display bar
-	display_bar_section.appendChild(display_bar)
-	console.log(values) 
+		display_bar.style.height = values + 'px'
+		display_bar.style.backgroundColor = "rgb(23,65,111)"
 
-	if(values != "")
-	values_to_be_sorted.push(parseInt(values))
+		//appending the it to the display bar
+		display_bar_section.appendChild(display_bar)
+	}
 	input_field.value = ""
 
 })
 
 function swap(j,i){
-	let temp = values_to_be_sorted[j]
+	var temp = values_to_be_sorted[j]
 	values_to_be_sorted[j] = values_to_be_sorted[i]
 	values_to_be_sorted[i] = temp
 }
@@ -113,26 +137,7 @@ async function bubble_sort(array_length){
 	}
 
 
-	display_bar_section.innerHTML = " "
-	values_to_be_sorted.forEach(elm => {
-
-
-			var display_bar = document.createElement('div')
-			display_bar.setAttribute('class', 'display_bar')
-
-			var values = elm
-			display_bar.innerHTML = values
-			display_bar.style.height = values + 'px'
-
-			display_bar.style.backgroundColor = "rgb(77,200,11)"
-			//appending the it to the display bar
-			display_bar_section.appendChild(display_bar)
-
-
-
-
-	})
-
+	final_sorted()
 
 
 }
@@ -205,27 +210,101 @@ async function selection_sort(array_length){
  	} 	
 
 
- 	display_bar_section.innerHTML = " "
- 	values_to_be_sorted.forEach(elm => {
-
-
-		var display_bar = document.createElement('div')
-		display_bar.setAttribute('class', 'display_bar')
-
-		var values = elm
-		display_bar.innerHTML = values
-		display_bar.style.height = values + 'px'
-
-		display_bar.style.backgroundColor = "rgb(23,65,111)"
-		display_bar_section.appendChild(display_bar)
-
- 	})
+ 	final_sorted()
 
 }
 
+async function delay_swapping(pivot,j,i){
 
 
-btn[1].addEventListener('click', () => {
+	return new Promise(res => {
+			console.log(values_to_be_sorted)
+
+
+ 		display_bar_section.innerHTML = " "
+
+		values_to_be_sorted.forEach(elm => {
+
+			var display_bar = document.createElement('div')
+			display_bar.setAttribute('class', 'display_bar')
+
+			var values = elm
+			display_bar.innerHTML = values
+			display_bar.style.height = values + 'px'
+
+			if(elm === values_to_be_sorted[pivot]){
+
+				console.log(1)
+				display_bar.style.backgroundColor = "rgb(23,167,111)"
+			}
+			else if(elm === values_to_be_sorted[i]){
+				console.log(2)
+				display_bar.style.backgroundColor = "rgb(226, 8, 189)"
+			}
+			else if(elm === values_to_be_sorted[j]){
+				console.log(3)
+				display_bar.style.backgroundColor = "rgb(226, 8, 98)"
+			}
+			else{
+				console.log(4)
+				display_bar.style.backgroundColor = "rgb(23,65,111)"
+			}
+
+
+			display_bar_section.appendChild(display_bar)
+
+
+		})
+
+		// swap(pivot,j)
+
+		setTimeout(() => {
+			res()
+		},4000)
+
+	})
+}
+
+
+async function quick_sort(first,last){
+
+		let i 
+		let j
+		let pivot 
+
+		// await delay_swapping(pivot,j)
+		if(first<last){
+
+			i = first
+			j = last
+			pivot = first
+			while(j > i){
+				await delay_swapping(pivot,j)
+				while(values_to_be_sorted[i] <= values_to_be_sorted[pivot] && i<last)
+					i++
+				while(values_to_be_sorted[j] > values_to_be_sorted[pivot])
+					j--
+				// console.log(values_to_be_sorted)
+				if(i<j){
+					swap(i,j)
+					// console.log(values_to_be_sorted)
+				}				
+
+				
+			}
+		
+			swap(pivot,j)
+			quick_sort(first, j)
+			quick_sort(j+1,last)
+		}
+
+		final_sorted()
+	}
+
+
+
+
+btn[1].addEventListener('click',async () => {
 
 	let array_length = values_to_be_sorted.length
 	var sorting = select_option.value
@@ -234,10 +313,9 @@ btn[1].addEventListener('click', () => {
 		bubble_sort(array_length)
 	else if (sorting === "selection" )
 		selection_sort(array_length)
-	else if(sorting === "quick")
-		selction
+	else if(sorting === "quick"){
+		await quick_sort(0,array_length-1)
+	}
 
 })
-
-
 

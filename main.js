@@ -6,10 +6,21 @@ const PORT = process.env.PORT || 8080
 
 app.set('view engine', 'ejs')
 
+
 //home
 app.get("/",(req,res) => {
-	res.render('home')
+
+	res.send("home")
+})
+
+//algorithm page
+app.get("/algorithm",(req,res) => {
+	
+	res.render('algorithm')
+
 } )
+
+
 
 app.listen(PORT, () => {
 	console.log("running on port 8080")

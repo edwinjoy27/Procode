@@ -1,0 +1,13 @@
+body,html{
+	margin : 0px;
+	height : 100%;
+}
+
+#display_bar_section{
+	display: flex;
+	flex-direction: row;
+}
+
+.display_bar{
+	margin : 1px;
+}

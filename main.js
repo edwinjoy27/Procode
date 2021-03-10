@@ -15,8 +15,7 @@ app.get("/",(req,res) => {
 
 //algorithm page
 app.get("/algorithm",(req,res) => {
-	res.render('algorithm')
-
+	
 	res.render('algorithm')
 
 } )

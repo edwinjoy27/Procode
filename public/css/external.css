@@ -88,6 +88,7 @@ body,html{
   }
   #hide{
         align-items: center;
+<<<<<<< HEAD
   }
 
   .seperation{
@@ -99,4 +100,11 @@ body,html{
     display : flex;
     flex-direction : row;
     flex-wrap : wrap;
+=======
+  };
+  #bi{
+    border-radius:10px;
+    color: rgb(0,0,0,0.9);
+     background-color : rgb(0,0,0,0.9);
+>>>>>>> 911a7a1da517e0626469705fc1ce9d53ee1d1ad1
   }

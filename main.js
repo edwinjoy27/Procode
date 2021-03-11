@@ -27,6 +27,13 @@ app.get("/regex",(req,res) => {
 
 } )
 
+//algorithm page
+app.get("/binary",(req,res) => {
+	
+	res.render('binary')
+
+} )
+
 app.listen(PORT, () => {
 	console.log("running on port 8080")
 })

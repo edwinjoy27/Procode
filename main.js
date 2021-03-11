@@ -20,7 +20,12 @@ app.get("/algorithm",(req,res) => {
 
 } )
 
+//algorithm page
+app.get("/regex",(req,res) => {
+	
+	res.render('regex')
 
+} )
 
 app.listen(PORT, () => {
 	console.log("running on port 8080")

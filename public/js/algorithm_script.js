@@ -12,6 +12,18 @@ const select_option = document.getElementById('algos')
 
 const btn = document.getElementsByClassName('button')
 
+//for altering description that needs to be written at 
+// the bottom
+
+const pivot = document.getElementById('pivot') 
+const main = document.getElementById('main') 
+const swap_bar = document.getElementById('swap') 
+
+// pivot.style.display = "none"
+// main.style.display = "none"
+// swap_bar.style.display = "none"
+
+
 var values_to_be_sorted = []
 
 
@@ -82,13 +94,13 @@ async function swap_bubble(j,i,array_length){
 						display_bar.style.height = values + 'px'
 
 						if(elm === values_to_be_sorted[j+1])
-							display_bar.style.backgroundColor = "rgb(23,167,111)"
+							display_bar.style.backgroundColor = "rgb(23,167,111)" //off green
 
 						else if(elm === values_to_be_sorted[j])
-							display_bar.style.backgroundColor = "rgb(50,123,111)"
+							display_bar.style.backgroundColor = "rgb(50,123,111)" //dark - green
 
-						else if(values_to_be_sorted.indexOf(elm) > array_length - i -1 )
-							display_bar.style.backgroundColor = "rgb(77,200,11)"
+						// else if(values_to_be_sorted.indexOf(elm) > array_length - i -1 )
+						// 	display_bar.style.backgroundColor = "#db8c84"
 
 						else
 							display_bar.style.backgroundColor = "rgb(23,65,111)"
@@ -110,7 +122,7 @@ async function swap_bubble(j,i,array_length){
 
 			 setTimeout(() =>{
 			 	res()
-			 },1000)
+			 },90)
 
 	} )
 }
@@ -149,7 +161,7 @@ async function selection_sort_condition(min,i){
 
 		setTimeout(() =>{
 			res()
-		},1000)
+		},500)
 
 	})
 }
@@ -184,10 +196,10 @@ async function selection_sort(array_length){
 				display_bar.innerHTML = values
 				display_bar.style.height = values + 'px'
 
-				if(elm === values_to_be_sorted[min])
+				if(values_to_be_sorted.indexOf(elm) === values_to_be_sorted.indexOf(values_to_be_sorted[min]))
 				display_bar.style.backgroundColor = "rgb(23,167,111)"
 
-				else if(elm === values_to_be_sorted[i])
+				else if(values_to_be_sorted.indexOf(elm) === values_to_be_sorted.indexOf(values_to_be_sorted[i]))
 					display_bar.style.backgroundColor = "rgb(50,123,111)"
 
 				else
@@ -214,6 +226,7 @@ async function selection_sort(array_length){
 
 }
 
+//function to delay quick sort
 async function delay_swapping(pivot,j,i){
 
 
@@ -232,22 +245,21 @@ async function delay_swapping(pivot,j,i){
 			display_bar.innerHTML = values
 			display_bar.style.height = values + 'px'
 
-			if(elm === values_to_be_sorted[pivot]){
+			if(values_to_be_sorted.indexOf(elm) === values_to_be_sorted.indexOf(values_to_be_sorted[pivot])){
 
-				console.log(1)
-				display_bar.style.backgroundColor = "rgb(23,167,111)"
+		
+				display_bar.style.backgroundColor = "#7b3e32" //maroonish
 			}
-			else if(elm === values_to_be_sorted[i]){
-				console.log(2)
-				display_bar.style.backgroundColor = "rgb(226, 8, 189)"
+			else if(values_to_be_sorted.indexOf(elm) === values_to_be_sorted.indexOf(values_to_be_sorted[i])){
+				display_bar.style.backgroundColor = "#cbcf02" //yellow
 			}
-			else if(elm === values_to_be_sorted[j]){
-				console.log(3)
-				display_bar.style.backgroundColor = "rgb(226, 8, 98)"
+			else if(values_to_be_sorted.indexOf(elm) === values_to_be_sorted.indexOf(values_to_be_sorted[j])){
+		
+				display_bar.style.backgroundColor = "#910c79" //pink
 			}
 			else{
-				console.log(4)
-				display_bar.style.backgroundColor = "rgb(23,65,111)"
+		
+				display_bar.style.backgroundColor =  "rgb(23,65,111)"
 			}
 
 
@@ -260,7 +272,7 @@ async function delay_swapping(pivot,j,i){
 
 		setTimeout(() => {
 			res()
-		},4000)
+		},600)
 
 	})
 }
@@ -278,8 +290,8 @@ async function quick_sort(first,last){
 			i = first
 			j = last
 			pivot = first
+			
 			while(j > i){
-				await delay_swapping(pivot,j)
 				while(values_to_be_sorted[i] <= values_to_be_sorted[pivot] && i<last)
 					i++
 				while(values_to_be_sorted[j] > values_to_be_sorted[pivot])
@@ -289,39 +301,95 @@ async function quick_sort(first,last){
 					swap(i,j)
 					// console.log(values_to_be_sorted)
 				}				
-
-				
+				await delay_swapping(pivot,j,i)
 			}
-		
 			swap(pivot,j)
-			quick_sort(first, j)
+			quick_sort(first, j-1)
 			quick_sort(j+1,last)
 		}
 
 		final_sorted()
 	}
 
-
-
-
 btn[1].addEventListener('click',async () => {
 
 	let array_length = values_to_be_sorted.length
 	var sorting = select_option.value
 
-	if(sorting === "bubble")
+	if(sorting === "bubble"){
+
+		//displaying the information regarding the colors
+		main.style.display = "block"
+		swap_bar.style.display = "block"
+
+
+		const swap_div = document.getElementById('swap_div')
+		swap_div.style.backgroundColor = "rgb(50,123,111)"
+
+		const main_div = document.getElementById('main_div')
+		main_div.style.backgroundColor = "rgb(23,167,111)" 
+
 		bubble_sort(array_length)
-	else if (sorting === "selection" )
+	}
+	else if (sorting === "selection" ){
+		
+		//displaying the information regarding the colors
+		main.style.display = "block"
+		swap_bar.style.display = "block"
+		const swap_div = document.getElementById('swap_div')
+		swap_div.style.backgroundColor = "rgb(50,123,111)"
+
+		const main_div = document.getElementById('main_div')
+		main_div.style.backgroundColor = "rgb(23,167,111)" 
+
 		selection_sort(array_length)
+	}
 	else if(sorting === "quick"){
+
+		//displaying the information regarding the colors
+		main.style.display = "block"
+		swap_bar.style.display = "block"
+		pivot.style.display = "block"
+
+		const swap_div = document.getElementById('swap_div')
+		swap_div.style.backgroundColor = "#910c79"
+
+		const main_div = document.getElementById('main_div')
+		main_div.style.backgroundColor = "#cbcf02"
+
+		const pivot_div = document.getElementById('pivot_div')
+		pivot_div.style.backgroundColor = "#7b3e32"
+
+
 		await quick_sort(0,array_length-1)
 	}
 
 })
 
-var erase_btn = document.getElementById('erase_all')
+var erase_btn = document.getElementsByClassName('erase_all')[0]
 
 erase_btn.addEventListener('click',() => {
-	display_bar_section.innerHTML =""
+	display_bar_section.innerHTML =" "
+	const dis = document.getElementById('description')
+	dis.style.display = "none"
 	values_to_be_sorted = []
+})
+
+const random_btn = document.getElementById('random_btn')
+
+function random_generator(){
+	return Math.floor(Math.random()*(499-10) + 10)
+}
+
+random_btn.addEventListener('click', () => {
+
+	values_to_be_sorted = []
+
+	for(let i = 0; i < 50; i++){
+		values_to_be_sorted.push(random_generator())
+	}
+
+	final_sorted()
+	console.log(values_to_be_sorted)
+
 })

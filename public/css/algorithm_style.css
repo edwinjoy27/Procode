@@ -5,8 +5,10 @@ body,html{
 	background-color : #c5c6c7;
 }
 #algos{
+	padding: 4px;
 	border-radius:12px;
-	width : 100%;
+    width :-webkit-fill-available;
+	height : 30px;
 	height : -webkit-fill-available;
     background-color :rgb(0,0,0,0.3);
     box-shadow: 5px 5px 5px #777a78 ;
@@ -19,10 +21,10 @@ body,html{
 	padding : 20px;
 	display: flex;
 	flex-direction: column;
-	
 	min-height : 70%;
 	background-color : rgb(0,0,0,0.3);
 	box-shadow: 5px 5px 5px #777a78 ;
+	overflow:auto;
 }
 
 #display_bar_section{
@@ -32,6 +34,7 @@ body,html{
 }
 
 .display_bar{
+	width : 28px;
 	margin : 1px;
 	border-radius : 11px;
 	
@@ -95,15 +98,44 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
-#erase_all{
-
+.erase_all{
+     width : 70px;
+	height : 32px;
 	border :none;
-	border-radius:12px;
-	background-color: #c62a0f;
+	
+	background-color: #c5c6c7;
 	outline :none;
-	box-shadow: 5px 5px 5px #777a78 ;
+	box-shadow: 5px 5px 5px #737170;
 }
 
-#div_erase{
-	margin-left :2%;
+.div_erase{
+	margin-left : 11px;
+}
+
+#algo_options{
+    
+    width : 155px;
+	height : 33px;
+}
+
+#description{
+	display:flex;
+}
+
+.info_color{
+	margin : 2px ;
+	height : 6px;
+	width : 70px;
+}
+
+#main{
+	display: none;
+}
+
+#swap{
+	display: none;
+}
+
+#pivot{
+	display:none;
 }

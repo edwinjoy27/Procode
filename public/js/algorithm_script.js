@@ -47,7 +47,7 @@ btn[0].addEventListener('click', () => {
 
 	var values = input_field.value
 
-	if(values != "" && parseInt(values) > 0){
+	if(values != "" && parseInt(values) > 0  &&  parseInt(values) < 500){
 		values_to_be_sorted.push(parseInt(values))
 		display_bar.innerHTML = values
 
@@ -319,3 +319,9 @@ btn[1].addEventListener('click',async () => {
 
 })
 
+var erase_btn = document.getElementById('erase_all')
+
+erase_btn.addEventListener('click',() => {
+	display_bar_section.innerHTML =""
+	values_to_be_sorted = []
+})

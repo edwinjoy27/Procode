@@ -19,10 +19,17 @@ const pivot = document.getElementById('pivot')
 const main = document.getElementById('main') 
 const swap_bar = document.getElementById('swap') 
 
+//button that genertes random data
+const random_btn = document.getElementById('random_btn')
+
 // pivot.style.display = "none"
 // main.style.display = "none"
 // swap_bar.style.display = "none"
 
+function trigger(val){
+	btn[0].disabled = val
+	random_btn.disabled = val
+}
 
 var values_to_be_sorted = []
 
@@ -38,7 +45,7 @@ function final_sorted(){
 		display_bar.setAttribute('class', 'display_bar')
 
 		var values = elm
-		display_bar.innerHTML = values
+		// display_bar.innerHTML = values
 		display_bar.style.height = values + 'px'
 
 		display_bar.style.backgroundColor = "rgb(23,65,111)"
@@ -61,7 +68,7 @@ btn[0].addEventListener('click', () => {
 
 	if(values != "" && parseInt(values) > 0  &&  parseInt(values) < 500){
 		values_to_be_sorted.push(parseInt(values))
-		display_bar.innerHTML = values
+		// display_bar.innerHTML = values
 
 		display_bar.style.height = values + 'px'
 		display_bar.style.backgroundColor = "rgb(23,65,111)"
@@ -90,7 +97,7 @@ async function swap_bubble(j,i,array_length){
 						display_bar.setAttribute('class', 'display_bar')
 
 						var values = elm
-						display_bar.innerHTML = values
+						// display_bar.innerHTML = values
 						display_bar.style.height = values + 'px'
 
 						if(elm === values_to_be_sorted[j+1])
@@ -133,7 +140,7 @@ async function bubble_sort(array_length){
 	var bar_elements = document.getElementsByClassName('display_bar')
 	console.log("before sorting ",values_to_be_sorted)
 
-	for(let i = 0; i < array_length ; i++){
+	for(let i = 0; i < values_to_be_sorted.length ; i++){
 
 		for(let j = 0; j < array_length - i - 1 ; j++){
 
@@ -144,13 +151,12 @@ async function bubble_sort(array_length){
 
 
 
-		console.log("after sorting ",values_to_be_sorted)
-
 	}
 
 
 	final_sorted()
 
+	trigger(false)
 
 }
 
@@ -172,7 +178,7 @@ async function selection_sort(array_length){
 
  	console.log("before sorting : ",values_to_be_sorted)	
 
- 	for(let i = 0; i < array_length; i++){
+ 	for(let i = 0; i < values_to_be_sorted.length ; i++){
 
  		let min = i
 
@@ -193,7 +199,7 @@ async function selection_sort(array_length){
 				display_bar.setAttribute('class', 'display_bar')
 
 				var values = elm
-				display_bar.innerHTML = values
+				// display_bar.innerHTML = values
 				display_bar.style.height = values + 'px'
 
 				if(values_to_be_sorted.indexOf(elm) === values_to_be_sorted.indexOf(values_to_be_sorted[min]))
@@ -216,13 +222,11 @@ async function selection_sort(array_length){
 
  		await selection_sort_condition(min,i)
 
-
-
- 		console.log("after sorting : ",values_to_be_sorted)		
  	} 	
 
 
  	final_sorted()
+	trigger(false)
 
 }
 
@@ -231,9 +235,7 @@ async function delay_swapping(pivot,j,i){
 
 
 	return new Promise(res => {
-			console.log(values_to_be_sorted)
-
-
+			
  		display_bar_section.innerHTML = " "
 
 		values_to_be_sorted.forEach(elm => {
@@ -242,7 +244,7 @@ async function delay_swapping(pivot,j,i){
 			display_bar.setAttribute('class', 'display_bar')
 
 			var values = elm
-			display_bar.innerHTML = values
+			// display_bar.innerHTML = values
 			display_bar.style.height = values + 'px'
 
 			if(values_to_be_sorted.indexOf(elm) === values_to_be_sorted.indexOf(values_to_be_sorted[pivot])){
@@ -251,11 +253,11 @@ async function delay_swapping(pivot,j,i){
 				display_bar.style.backgroundColor = "#7b3e32" //maroonish
 			}
 			else if(values_to_be_sorted.indexOf(elm) === values_to_be_sorted.indexOf(values_to_be_sorted[i])){
-				display_bar.style.backgroundColor = "#cbcf02" //yellow
+				display_bar.style.backgroundColor = "rgb(23,167,111)" //yellow
 			}
 			else if(values_to_be_sorted.indexOf(elm) === values_to_be_sorted.indexOf(values_to_be_sorted[j])){
 		
-				display_bar.style.backgroundColor = "#910c79" //pink
+				display_bar.style.backgroundColor = "rgb(50,123,111)" //pink
 			}
 			else{
 		
@@ -313,8 +315,12 @@ async function quick_sort(first,last){
 
 btn[1].addEventListener('click',async () => {
 
+	btn[0].disabled = true
+	random_btn.disabled = true
 	let array_length = values_to_be_sorted.length
 	var sorting = select_option.value
+
+
 
 	if(sorting === "bubble"){
 
@@ -352,16 +358,17 @@ btn[1].addEventListener('click',async () => {
 		pivot.style.display = "block"
 
 		const swap_div = document.getElementById('swap_div')
-		swap_div.style.backgroundColor = "#910c79"
+		swap_div.style.backgroundColor = "rgb(50,123,111)"
 
 		const main_div = document.getElementById('main_div')
-		main_div.style.backgroundColor = "#cbcf02"
+		main_div.style.backgroundColor = "rgb(23,167,111)" 
 
 		const pivot_div = document.getElementById('pivot_div')
 		pivot_div.style.backgroundColor = "#7b3e32"
 
 
 		await quick_sort(0,array_length-1)
+		trigger(false)
 	}
 
 })
@@ -369,13 +376,17 @@ btn[1].addEventListener('click',async () => {
 var erase_btn = document.getElementsByClassName('erase_all')[0]
 
 erase_btn.addEventListener('click',() => {
-	display_bar_section.innerHTML =" "
-	const dis = document.getElementById('description')
-	dis.style.display = "none"
-	values_to_be_sorted = []
-})
+	// display_bar_section.innerHTML =" "
+	// const dis = document.getElementById('description')
+	// dis.style.display = "none"
 
-const random_btn = document.getElementById('random_btn')
+		values_to_be_sorted = []
+		window.location.reload()
+	// else
+	// 	values_to_be_sorted = []
+
+
+})
 
 function random_generator(){
 	return Math.floor(Math.random()*(499-10) + 10)
@@ -390,6 +401,5 @@ random_btn.addEventListener('click', () => {
 	}
 
 	final_sorted()
-	console.log(values_to_be_sorted)
 
 })

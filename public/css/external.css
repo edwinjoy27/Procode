@@ -85,3 +85,8 @@ body,html{
   #hide{
         align-items: center;
   };
+  #bi{
+    border-radius:10px;
+    color: rgb(0,0,0,0.9);
+     background-color : rgb(0,0,0,0.9);
+  }

@@ -29,6 +29,7 @@ const random_btn = document.getElementById('random_btn')
 function trigger(val){
 	btn[0].disabled = val
 	random_btn.disabled = val
+	btn[1].disabled = val
 }
 
 var values_to_be_sorted = []
@@ -317,6 +318,7 @@ btn[1].addEventListener('click',async () => {
 
 	btn[0].disabled = true
 	random_btn.disabled = true
+	btn[1].disabled = true
 	let array_length = values_to_be_sorted.length
 	var sorting = select_option.value
 

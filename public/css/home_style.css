@@ -54,28 +54,7 @@ body{
   flex-wrap :wrap;
 /*   justify-content : space-around; */
 }
-.vis{
-/*     width:-webkit-fill-available; */
-/*     height:-webkit-fill-available; */
-/*      max-height: 25%;
-     max-width : 30%; */
 
-     max-width : 29.7%;
-     padding-left : 15px;
-     padding-right : 15px;
-     margin:4px;
-     background: #efefef;
-     border-radius:10px;
-     box-shadow: 5px 5px  5px #777a78 ;
-     overflow-wrap: break-word;
-     cursor:pointer;
-     transition :1s;
-     
-}
-
-.vis:hover{
-   box-shadow: 5px 5px  5px; 
-}
 
 #header{
     letter-spacing : 55px;
@@ -158,4 +137,69 @@ a:visited{
 
 /*    padding-left : px; */
   letter-spacing : 7px;
+}
+
+@media only screen and (min-width: 800px){
+
+/*   #visid{
+  padding-left : 5%;
+  padding-right : 5%;
+    display:flex;
+  flex-direction :row;
+  flex-wrap :wrap;
+  justify-content : space-around;
+} */
+
+
+  .vis{
+/*     width:-webkit-fill-available; */
+/*     height:-webkit-fill-available; */
+/*      max-height: 25%;
+     max-width : 30%; */
+
+     max-width : 29.7%;
+     padding-left : 15px;
+     padding-right : 15px;
+     margin:4px;
+     background: #efefef;
+     border-radius:10px;
+     box-shadow: 5px 5px  5px #777a78 ;
+     overflow-wrap: break-word;
+     cursor:pointer;
+     transition :1s;
+     
+}
+
+.vis:hover{
+   box-shadow: 5px 5px  5px; 
+}
+}
+
+@media only screen and (max-width: 799px){
+
+    .vis{
+/*     width:-webkit-fill-available; */
+/*     height:-webkit-fill-available; */
+/*      max-height: 25%;
+     max-width : 30%; */
+
+/*      max-width : 29.7%; */
+     padding-left : 15px;
+     padding-right : 15px;
+     margin:4px;
+     background: #efefef;
+     border-radius:10px;
+     box-shadow: 5px 5px  5px #777a78 ;
+     overflow-wrap: break-word;
+     cursor:pointer;
+     transition :1s;
+     
+}
+
+.vis:hover{
+   box-shadow: 5px 5px  5px; 
+}
+}
+
+
 }

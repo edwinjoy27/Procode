@@ -21,7 +21,7 @@ body,html{
    padding-top : 80px;
    padding-bottom : 50px;
    margin:2%;
-   padding-left : 1%;
+/*    padding-left : 1%; */
   min-height: 250px;
   border-radius:10px;
   text-align : center;
@@ -32,8 +32,8 @@ body,html{
 .disp{
   padding-top : 90px;
    margin:2%;
-   padding-left : 6%;
-   padding-right : 6%;
+/*    padding-left : 7%;
+   padding-right : 6%; */
 /*   min-height: 250px; */
   border-radius:10px;
   text-align : center;
@@ -50,12 +50,15 @@ body{
     display:flex;
   flex-direction :row;
   flex-wrap :wrap;
+  justify-content : space-around;
 }
 .vis{
 /*     width:-webkit-fill-available; */
 /*     height:-webkit-fill-available; */
-     min-width: 300px;
-     width : 30%;
+/*      max-height: 25%;
+     max-width : 30%; */
+
+     max-width : 390px;
      padding-left : 15px;
      padding-right : 15px;
      margin:4px;
@@ -74,8 +77,8 @@ body{
 
 #header{
     letter-spacing : 55px;
-   padding : 0% 25%;
-    top: 0;
+/*    padding : 0% 25%; */
+/*     top: 0; */
     transition: 0.2s;
 /*     margin-top: 10%; */
     color: #efefef;
@@ -148,28 +151,49 @@ a:visited{
   }
 
 #foot{
-
+  
+  padding-left : 32px;
+  padding-right : 22px;
   margin-top : 2%;
   min-height : 150px;
   display : flex;
   display : row;
   flex-wrap : wrap;
+  color : white;
+  background-color: rgb(0,0,0)
+/*  background-color : rgb(0,0,0,0.3); */
   
 }
 
 #logo{
-  min-width: 32%;
+
+/*   padding-left : 50%; */
+  margin : 25px;
+  width: 15%;
 }
 
 #github_link{
+
+   margin : 25px;
+   padding-top : 30px ;
   min-width : 30%;
 
   text-align : center;
 }
 
 #team_name{
+  
+  padding-top : 50px;
+  padding-left : 25px;
+   margin : 25px;
 
   min-width : 38%;
 
   text-align : center;
+}
+
+#tagline{
+
+  padding-right : 2%;
+  letter-spacing : 7px;
 }

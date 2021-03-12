@@ -20,14 +20,14 @@ app.get("/algorithm",(req,res) => {
 
 } )
 
-//algorithm page
+//regex page
 app.get("/regex",(req,res) => {
 	
 	res.render('regex')
 
 } )
 
-//algorithm page
+//ascii page
 app.get("/ascii",(req,res) => {
 	
 	res.render('ascii')

@@ -13,6 +13,7 @@ body,html{
    min-height : 130%;
    flex-direction: column;
    background-color:#c5c6c7;
+  
   }
   
 #bg{
@@ -114,7 +115,11 @@ body{
    display : flex;
    flex-direction : row;
    flex-wrap : wrap;
+   margin-top:45px;
+    margin-bottom:45px;
 
+/*    margin : 8px;
+ */
  }
  .btn {
    background-color: #c5c6c7;

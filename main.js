@@ -28,9 +28,9 @@ app.get("/regex",(req,res) => {
 } )
 
 //algorithm page
-app.get("/binary",(req,res) => {
+app.get("/ascii",(req,res) => {
 	
-	res.render('binary')
+	res.render('ascii')
 
 } )
 

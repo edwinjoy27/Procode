@@ -37,5 +37,5 @@ display_box[1].addEventListener('click', () => {
 
 display_box[2].addEventListener('click', () => {
 
-    window.location.href = '/binary'
+    window.location.href = '/ascii'
 })             

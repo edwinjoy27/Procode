@@ -69,38 +69,7 @@ body{
 /*     margin-top: 10%; */
    color:rgb(0,0,0,0.3);
 }
-#navbar {
-/*     padding-left: 30%;
-   padding-right:30%; */
-   align-items: center;
-   text-align: center;
-   background-color: black;
-   position: fixed;
-   top: -150px;
-   width:-webkit-fill-available;
-/*     width: 100%; */
-   display: block;
-   transition: top 0.3s;
- }
- 
- #navbar a {
-   float: left;
-   display: block;
-   color: #f2f2f2;
-   text-align: center;
-   padding: 15px;
-   text-decoration: none;
-   font-size: 17px;
-   align-items: center;
-   
- }
- 
- #navbar a:hover {
-   background-color: #ddd;
-   color: black;
-   align-items: center;
-   text-align: center;
- }
+
  #hide{
        align-items: center;
 

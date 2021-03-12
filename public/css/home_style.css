@@ -47,10 +47,12 @@ body{
 }
 
 #visid{
+  padding-left : 5%;
+  padding-right : 5%;
     display:flex;
   flex-direction :row;
   flex-wrap :wrap;
-  justify-content : space-around;
+  justify-content : space-between;
 }
 .vis{
 /*     width:-webkit-fill-available; */
@@ -77,6 +79,7 @@ body{
 
 #header{
     letter-spacing : 55px;
+    padding-left : 50px;
 /*    padding : 0% 25%; */
 /*     top: 0; */
     transition: 0.2s;
@@ -152,7 +155,9 @@ a:visited{
 
 #foot{
   
-  padding-left : 32px;
+/*   padding-left : 85px; */
+  padding-left : 7%;
+/*   padding-right : 7%; */
   padding-right : 22px;
   margin-top : 2%;
   min-height : 150px;
@@ -168,15 +173,18 @@ a:visited{
 #logo{
 
 /*   padding-left : 50%; */
-  margin : 25px;
+  margin : 27px;
+  margin-top : 45px;
+
   width: 15%;
 }
 
 #github_link{
 
-   margin : 25px;
+   margin : 27px;
    padding-top : 30px ;
-  min-width : 30%;
+   padding-left : 1.7%;
+  width : 48%;
 
   text-align : center;
 }
@@ -184,16 +192,17 @@ a:visited{
 #team_name{
   
   padding-top : 50px;
-  padding-left : 25px;
-   margin : 25px;
+/*   padding-left : 25px; */
+   margin : 27px;
 
-  min-width : 38%;
+  width : 300px;
 
   text-align : center;
+/*   padding-right : 2%; */
 }
 
 #tagline{
 
-  padding-right : 2%;
+/*    padding-left : px; */
   letter-spacing : 7px;
 }

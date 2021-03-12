@@ -1,7 +1,6 @@
 body,html{
 	margin : 0px;
 	height : 100%;
-/* 	padding : 1%; */
 	background-color : #c5c6c7;
 }
 #algos{
@@ -12,9 +11,7 @@ body,html{
 	height : -webkit-fill-available;
     background-color :rgb(0,0,0,0.3);
     box-shadow: 5px 5px 5px #777a78 ;
-    
 }
-
 #display_section{
     margin:2%;
     margin-bottom : 5%;
@@ -27,33 +24,26 @@ body,html{
 	box-shadow: 5px 5px 5px #777a78 ;
 	overflow:auto;
 }
-
 #display_bar_section{
 	margin-top :15px;
 	display:flex;
 	flex-direction : row;
 }
-
 .display_bar{
 	width : 28px;
 	margin : 1px;
 	border-radius : 11px;
-	
 }
-
 #search_area{
 	padding-left : 3%;
 	margin-top : 70px;
 	min-height : 9%;
 	display:flex;
 	flex-wrap : wrap;
-
 }
-
 #input_area{
 	padding-top : 5px;
 }
-
 #input_field{
 	padding-left :9px;
 	border-radius:11px;
@@ -66,15 +56,12 @@ body,html{
 	box-shadow: 3px 3px 5px #777a78 ;
 	transition : 1s;
 }
-
 #input_field:hover{
     border-bottom : 1px solid green
 }
-
 #input_field:focus{
 	outline:none;
 }
-
 .button{
 	cursor : pointer;
 	margin : 5px;
@@ -82,88 +69,70 @@ body,html{
 	width : 70px;
 	height : 30px;
 	box-shadow: 3px 3px 5px #777a78 ;
-
 }
-
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    
 }
-
 button{
 	cursor : pointer;
 }
-
 #option_area{
 	display:flex;
 	flex-direction :row;
 	flex-wrap :wrap;
-
 }
-
 .erase_all{
      width : 70px;
 	height : 32px;
-	border :none;
-	
+	border :none;	
 	background-color: #c5c6c7;
 	outline :none;
 	box-shadow: 5px 5px 5px #737170;
 }
-
 .div_erase{
 	margin-left : 11px;
 }
-
 #algo_options{
-    
-    width : 155px;
+        width : 155px;
 	height : 33px;
 }
-
 #description{
 	display:flex;
 }
-
 .info_color{
 	margin : 2px ;
 	height : 6px;
 	width : 70px;
 }
-
 #main{
 	display: none;
 }
-
 #swap{
 	display: none;
 }
-
 #pivot{
 	display:none;
 }
-
 #bg{
-/*     background-color: black; */
-background-color : rgb(0,0,0,0.3);
-box-shadow: 5px 5px 5px #777a78 ;
+	background-color : rgb(0,0,0,0.3);
+	box-shadow: 5px 5px 5px #777a78 ;
 }
 .disp{
- padding-top : 90px;
-  margin:2%;
- height: 250px;
- border-radius:10px;
- text-align : center;
- overflow-wrap : break-word
- }
- #header{
+	padding-top : 90px;
+	margin:2%;
+	height: 250px;
+	border-radius:10px;
+	text-align : center;
+	overflow-wrap : break-word
+}
+#header{
 	letter-spacing : 40px;
 	font-family: 'Courier New', monospace;
 	top: 0;
 	transition: 0.2s;
 	color: #efefef;
 	font-size:60px;
- }
+}

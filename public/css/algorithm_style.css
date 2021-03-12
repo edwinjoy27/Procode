@@ -158,6 +158,12 @@ box-shadow: 5px 5px 5px #777a78 ;
  border-radius:10px;
  text-align : center;
  overflow-wrap : break-word
- 
-
-}
+ }
+ #header{
+	letter-spacing : 40px;
+	font-family: 'Courier New', monospace;
+	top: 0;
+	transition: 0.2s;
+	color: #efefef;
+	font-size:60px;
+ }

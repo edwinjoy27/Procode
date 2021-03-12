@@ -56,13 +56,10 @@ body{
 }
 #header{
    letter-spacing : 55px;
-/*   padding : 0% 25%; */
    top: 0;
    transition: 0.2s;
-/*     margin-top: 10%; */
    color: #efefef;
    font-size:60px;
-
 }
 
 .heading2{

@@ -10,7 +10,7 @@ body,html{
 #section{
    display: flex;
 
-   min-height : 130%;
+/*    min-height : 130%; */
    flex-direction: column;
    background-color:#c5c6c7;
   
@@ -18,6 +18,7 @@ body,html{
   
 #bg{
 /*     background-color: black; */
+box-shadow: 5px 5px  5px #777a78 ;
 background-color : rgb(0,0,0,0.3);
 }
 .disp{
@@ -52,7 +53,12 @@ body{
     border-radius:10px;
     box-shadow: 5px 5px  5px #777a78 ;
     overflow-wrap: break-word;
+    transition: 1s;
     
+}
+
+.vis:hover{
+  box-shadow: 5px 5px  5px;
 }
 #header{
    letter-spacing : 55px;

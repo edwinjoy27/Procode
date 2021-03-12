@@ -18,7 +18,8 @@ body,html{
 #bg{
   
    box-shadow: 5px 7px  3px grey; 
-   padding-top : 90px;
+   padding-top : 80px;
+   padding-bottom : 50px;
    margin:2%;
    padding-left : 1%;
   min-height: 250px;
@@ -78,7 +79,7 @@ body{
     transition: 0.2s;
 /*     margin-top: 10%; */
     color: #efefef;
-    font-size:60%;
+    font-size:60px;
 
 }
 
@@ -146,4 +147,29 @@ a:visited{
 
   }
 
- 
+#foot{
+
+  margin-top : 2%;
+  min-height : 150px;
+  display : flex;
+  display : row;
+  flex-wrap : wrap;
+  
+}
+
+#logo{
+  min-width: 32%;
+}
+
+#github_link{
+  min-width : 30%;
+
+  text-align : center;
+}
+
+#team_name{
+
+  min-width : 38%;
+
+  text-align : center;
+}

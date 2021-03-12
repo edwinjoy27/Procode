@@ -23,10 +23,11 @@ body,html{
  
 }
 #visid{
+  margin-left:4.9%;
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap : wrap;
-  width:90%;
+/*   width:90%; */
 }
 #header{
   top: 0;
@@ -79,7 +80,21 @@ color: rgb(0,0,0,0.9);
  box-shadow: 5px 5px  5px #777a78;
  align-items:center;
 }
-th{
 
-background-color:#efefef;
+table{
+  width : 95%;
+  display : flex;
+  flex-direction : column;
+}
+
+#table_tr{
+ 
+  display : flex;
+  flex-direction : row;
+  
+  width : -webkit-fill-available;
+}
+th{
+  width : 50%;
+  background-color:#efefef;
 }

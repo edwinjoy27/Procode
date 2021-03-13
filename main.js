@@ -1,7 +1,10 @@
 const express = require('express')
 const app = express() 
+const favicon = require('serve-favicon')
 
 app.use(express.static(__dirname+'/public'))
+app.use(favicon(__dirname+'/public/css/favicon.png'))
+
 const PORT = process.env.PORT || 8080
 
 app.set('view engine', 'ejs')

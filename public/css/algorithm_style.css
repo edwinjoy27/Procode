@@ -5,6 +5,7 @@ body,html{
 }
 #algos{
 	padding: 4px;
+  
 	border-radius:12px;
     width :-webkit-fill-available;
 	height : 30px;
@@ -91,11 +92,13 @@ button{
 	background-color: #c5c6c7;
 	outline :none;
 	box-shadow: 5px 5px 5px #737170;
+	margin-bottom : 3px;
 }
 .div_erase{
 	margin-left : 11px;
 }
 #algo_options{
+	padding-bottom : 8px;
         width : 155px;
 	height : 33px;
 }

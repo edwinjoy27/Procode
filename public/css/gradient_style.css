@@ -1,0 +1,29 @@
+body,html{
+
+    margin : 0px;
+    height : 100%;
+
+}
+
+#head{
+    text-align : center;
+    align-item : cenetr;
+}
+#color_display{
+/*    margin : 1.5%;*/
+    position : relative;
+    border : 1px solid black;
+    height : 600px;
+}
+
+#btn_container{
+    height : -webkit-fill-available;
+    position : absolute;
+/*     top : 50%; */
+    right : 0;
+}
+
+#slide_btn{
+    height : -webkit-fill-available;
+}
+
